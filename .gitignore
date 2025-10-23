@@ -1,0 +1,8 @@
+*.pdb
+*.exe
+*.ilk
+*.old
+*package*.json
+node_modules
+Libraries/**
+!Libraries/keepme

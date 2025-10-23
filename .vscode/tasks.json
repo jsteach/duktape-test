@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build nob",
+            "type": "shell",
+            "windows" : {
+                "command": "clang",
+                "args": [
+                    "-std=c11",
+                    "--debug",
+                    "-fno-sanitize=undefined",
+                    "-fno-omit-frame-pointer",
+                    "nob.c",
+                    "-o",
+                    "nob.exe"
+                ],
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Run setup",
+        },
+        {
+            "label": "Build game",
+            "type": "shell",
+            "windows":{
+                "command": "${workspaceFolder}/nob.exe",
+            },
+            "linux":{
+                "command": "${workspaceFolder}/nob",
+            },
+            // "dependsOn": "Build nob",
+        }
+    ]
+}

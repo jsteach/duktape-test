@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "nob.h": "c",
+        "duk_module_duktape.h": "c"
+    }
+}
